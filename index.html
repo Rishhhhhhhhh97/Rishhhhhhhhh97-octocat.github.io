@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinBridge Loans & Partner Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="tag">Trusted Loan Marketplace</p>
+        <h1>FinBridge Finance Company</h1>
+        <p>
+          Compare all major loan products and connect with leading NBFC banks in one place.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card auth-card">
+        <h2>Login & Registration</h2>
+        <p class="muted">Users and DSA partners can securely access the platform.</p>
+
+        <div class="switch-row" id="accountTypeSwitch">
+          <button class="switch active" data-role="user" type="button">Normal User</button>
+          <button class="switch" data-role="dsa" type="button">DSA Partner</button>
+        </div>
+
+        <div class="switch-row" id="authModeSwitch">
+          <button class="switch active" data-mode="login" type="button">Login</button>
+          <button class="switch" data-mode="register" type="button">Register</button>
+        </div>
+
+        <form id="authForm">
+          <label>
+            Full Name
+            <input type="text" id="name" placeholder="Enter full name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" placeholder="Enter email" required />
+          </label>
+
+          <div class="switch-row compact" id="loginMethodSwitch">
+            <button class="switch active" data-method="password" type="button">Password</button>
+            <button class="switch" data-method="otp" type="button">OTP</button>
+          </div>
+
+          <label id="passwordField">
+            Password
+            <input type="password" id="password" placeholder="Create or enter password" />
+          </label>
+
+          <label id="otpField" class="hidden">
+            OTP
+            <input type="text" id="otp" placeholder="Enter 6-digit OTP" maxlength="6" />
+          </label>
+
+          <div class="button-row">
+            <button type="button" id="sendOtpBtn" class="secondary hidden">Send OTP</button>
+            <button type="submit" id="submitBtn">Continue</button>
+          </div>
+        </form>
+
+        <div id="authMessage" class="message" aria-live="polite"></div>
+      </section>
+
+      <section class="card">
+        <h2>Loan Products</h2>
+        <div id="loanGrid" class="loan-grid"></div>
+      </section>
+
+      <section class="card">
+        <h2>NBFC Banks</h2>
+        <p class="muted">Listed under each loan category for quick partner discovery.</p>
+        <div id="nbfcList" class="nbfc-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
